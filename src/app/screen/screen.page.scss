@@ -1,0 +1,32 @@
+ion-grid {
+    height: 100%;
+    width: 100%;
+}
+.row-img{
+    height: 50%;
+}
+
+.row-button{
+    height: 25%;
+    justify-content: center;
+    align-self: center;
+}
+.bg {
+    --background: #91D4C2;
+}
+
+.row-img-body{
+    justify-content: center;
+    align-self: center;
+    // flex: 1;
+}
+
+.img-home{
+    height: 50%;
+    width: 50%;
+}
+.row-text{
+    height: 25%;
+    justify-content: center;
+    align-self: center;
+}

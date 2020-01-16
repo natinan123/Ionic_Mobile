@@ -1,0 +1,34 @@
+<ion-content class="row-login" color="primary">
+  <form [formGroup]="loginUser">
+    <ion-grid>
+      <ion-row class="row-img">
+        <ion-avatar class="img">
+          <img src="assets/imgs/home.jpg">
+        </ion-avatar>
+      </ion-row>
+      <ion-row color="primary" justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <div text-center>
+            <h3>กรุณาเข้าสู่ระบบ</h3>
+          </div>
+          <div padding>
+            <ion-item>
+              <ion-input formControlName="email_id" [(ngModel)]="email_id" type="text" placeholder="E-mail"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input formControlName="password" [(ngModel)]="password" type="password" placeholder="Password"></ion-input>
+            </ion-item>
+          </div>
+          <ion-row>
+            <ion-col class="row-text">
+              <ion-button size="Small" type="submit" (click)="onLogin()" expand="block">ตกลง</ion-button>
+            </ion-col>
+            <ion-col>
+              <ion-button size="Small" expand="block" href="/register">สมัคสมาชิก</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

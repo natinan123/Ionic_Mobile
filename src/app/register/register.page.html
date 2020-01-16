@@ -1,0 +1,81 @@
+<ion-content color="primary">
+  <!-- <form #form="ngForm" (ngSubmit)="register(form)"> -->
+  <form #form="ngForm" [formGroup]="registerForm" >
+
+    <ion-grid>
+
+      <ion-row class="row-head">
+        <ion-col class="row-img">
+          <ion-avatar class="img">
+            <img src="assets/imgs/home.jpg">
+          </ion-avatar>
+        </ion-col>
+        <ion-col class="col-text">
+          <ion-label>ระบบจัดการอสังหาริมทรัพย์</ion-label>
+        </ion-col>
+        <ion-col class="row-col3"></ion-col>
+      </ion-row>
+
+
+      <ion-row class="box" color="primary" justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <div text-center>
+            <h3>สมัครสมาชิก</h3>
+          </div>
+          <div padding>
+            <ion-item>
+              <ion-label>เลือกสถานะที่จะสมัคร</ion-label>
+              <ion-select placeholder="เลือกสถานะ">
+                <ion-select-option value="seller">ผู้ประกาศขาย</ion-select-option>
+                <ion-select-option value="buyer">ผู้ซื้อ</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item>
+              <ion-input formControlName="EmailRegis" [(ngModel)]="EmailRegis" type="email" placeholder="your@email.com"
+                ngModel required></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-input formControlName="Password" [(ngModel)]="Password" type="password" placeholder="Password"
+                ngModel required></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-input formControlName="Repassword" [(ngModel)]="Repassword" type="password"
+                placeholder="Confirm password" ngModel required></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-input formControlName="Fname" [(ngModel)]="Fname" type="text" placeholder="Username" ngModel
+                required></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-input formControlName="Lname" [(ngModel)]="Lname" type="text" placeholder="Lastname" ngModel
+                required></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-input formControlName="Phone" [(ngModel)]="Phone" type="text" placeholder="Telaphone" ngModel
+                required></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-input formControlName="Id_line" [(ngModel)]="Id_line" type="text" placeholder="ID Line" ngModel
+                required></ion-input>
+            </ion-item>
+          </div>
+          <ion-row>
+            <ion-col>
+              <ion-button size="Small" type="submit" (click)="onRegister()" expand="block">ตกลง</ion-button>
+            </ion-col>
+            <ion-col>
+              <ion-button size="Small" expand="block" href="tabs">กลับสู่หน้าหลัก</ion-button>
+            </ion-col>
+          </ion-row>
+
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

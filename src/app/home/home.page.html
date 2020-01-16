@@ -1,14 +1,49 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+    <ion-title>home</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+
+  <!-- List of Text Items -->
+  <ion-list>
+    <ion-list-header>
+      <ion-label>รายการแนะนำ</ion-label>
+    </ion-list-header>
+    <ion-item *ngFor="let re of recoms">
+      <ion-thumbnail slot="start">
+        <img src="data:image/png;base64,{{re.image1}}">
+      </ion-thumbnail>
+      <ion-label>{{re.pro_head}}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <!-- List of Text Items -->
+  <ion-list>
+    <ion-list-header>
+      <ion-label>รายการยอดนิยม</ion-label>
+    </ion-list-header>
+    <ion-item *ngFor="let pop of poppular">
+      <ion-thumbnail slot="start">
+        <img src="data:image/png;base64,{{pop.image1}}">
+      </ion-thumbnail>
+      <ion-label>{{pop.pro_head}}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <!-- List of Text Items -->
+  <ion-list>
+    <ion-list-header>
+      <ion-label>อสังหาริมทรัพย์</ion-label>
+    </ion-list-header>
+    <ion-item *ngFor="let pro of products">
+      <ion-thumbnail slot="start">
+        <img src="data:image/png;base64,{{pro.image1}}">
+      </ion-thumbnail>
+      <ion-label>{{pro.pro_head}}</ion-label>
+    </ion-item>
+  </ion-list>
+
+
 </ion-content>

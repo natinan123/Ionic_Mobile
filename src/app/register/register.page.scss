@@ -1,0 +1,59 @@
+ion-grid{
+    height: 100%;
+    width: 100%;
+}
+.row-img{
+    height: 25%;
+    justify-content: center;
+    align-self: center;
+    display: flex;
+    flex: 2;
+}
+
+
+
+.img{
+    height:75%;
+    width: 75%;
+
+}
+
+.bg{
+    --background: #91D4C2;
+}
+
+.row-head{
+    height: 25%;
+    width: 100%;
+    display: flex;
+}
+
+
+.row-head-body{
+    width: 100%;
+    display: flex;
+}
+
+.col-text{
+    justify-content: center;
+    align-self: center;
+    display: flex;
+    flex: 8;
+    font-size: 15px;
+}
+
+.box{
+    height:75% ;
+    justify-content: center;
+    align-self: center;
+}
+
+.row-col3{
+    display: flex;
+    flex: 2;
+}
+
+.text{
+    font-size: 13px;
+}
+

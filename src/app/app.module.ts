@@ -9,7 +9,9 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
-import {NgxWebstorageModule} from 'ngx-webstorage';
+import { NgxWebstorageModule } from 'ngx-webstorage';
+import { AgmCoreModule } from '@agm/core';
+import { API } from './map-API';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,7 +22,10 @@ import {NgxWebstorageModule} from 'ngx-webstorage';
     AppRoutingModule,
     HttpClientModule,
     NgxWebstorageModule.forRoot(),
-
+    AgmCoreModule.forRoot({
+      apiKey: API.GOOGLE_API_KEY,
+      libraries: ['places', 'geometry', 'drawing']
+    }),//google api
   ],
   providers: [
     StatusBar,

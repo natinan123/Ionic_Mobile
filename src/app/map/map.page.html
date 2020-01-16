@@ -1,9 +1,34 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>map</ion-title>
+    
+    <ion-item>
+      <ion-label>ประเภทอสังหาริมทรัพย์</ion-label>
+      <ion-select>
+        <ion-select-option value="bird" >บ้านเดี่ยว</ion-select-option>
+        <ion-select-option value="cat">ทาวน์เฮาส์</ion-select-option>
+        <ion-select-option value="dog" >อพาร์ทเมนท์</ion-select-option>
+        <ion-select-option value="honeybadger">อาคารพาณิชย์</ion-select-option>
+        <ion-select-option value="dog" >คอนโดมิเนียม</ion-select-option>
+        <ion-select-option value="honeybadger">ที่ดิน</ion-select-option>
+      </ion-select>
+    </ion-item>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <agm-map [style.height.px]="height"  [latitude]="lat2" [longitude]="lng2">
+    <agm-marker *ngFor="let m of markers;" [latitude]="m.latitude" [longitude]="m.longtitude">
 
+      <agm-info-window>
+        <h5><strong>{{m.type_name}} </strong></h5>
+
+        <p>{{m.pro_head}}</p>
+        <p>{{m.price}} บาท</p>
+        <p><a mat-flat-button style="width: 100%; background: #1d6a96 ; color: snow; "
+               >รายละเอียด</a></p>
+    </agm-info-window>
+
+    </agm-marker>
+  </agm-map>
 </ion-content>

@@ -15,6 +15,9 @@ import { NgxWebstorageModule } from 'ngx-webstorage';
 import { AgmCoreModule } from '@agm/core';
 import { API } from '../map-API';
 import { ProDetailComponent } from './pro-detail/pro-detail.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { ProfileComponent } from './profile/profile.component';
+import { MessageComponent } from './message/message.component';
 
 
 @NgModule({
@@ -26,6 +29,9 @@ import { ProDetailComponent } from './pro-detail/pro-detail.component';
     MailComponent,
     FavoriteComponent,
     ProDetailComponent,
+    ProfileComponent,
+    EditProfileComponent,
+    MessageComponent,
   ],
   imports: [
     CommonModule,

@@ -9,6 +9,9 @@ import { WishlistComponent } from '../shared/wishlist/wishlist.component';
 import { MailComponent } from '../shared/mail/mail.component';
 import { FavoriteComponent } from '../shared/favorite/favorite.component';
 import { ProDetailComponent } from '../shared/pro-detail/pro-detail.component';
+import { EditProfileComponent } from '../shared/edit-profile/edit-profile.component';
+import { ProfileComponent } from '../shared/profile/profile.component';
+import { MessageComponent } from '../shared/message/message.component';
 
 
 const routes: Routes = [
@@ -41,12 +44,24 @@ const routes: Routes = [
         component: MailComponent
       },
       { // 
+        path: 'message/:pro_id',
+        component: MessageComponent
+      },
+      { // 
         path: 'favorite',
         component: FavoriteComponent
       },
       { // 
         path: 'prodetail/:pro_id',
         component: ProDetailComponent
+      },
+      { // 
+        path: 'profile',
+        component: ProfileComponent
+      },
+      { // 
+        path: 'edit_profile',
+        component: EditProfileComponent
       },
     ]
   },

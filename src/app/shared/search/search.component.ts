@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ServerService } from 'src/app/@service/server.service';
 
 @Component({
@@ -8,6 +8,7 @@ import { ServerService } from 'src/app/@service/server.service';
 })
 export class SearchComponent implements OnInit {
   products: Object;
+
 
   constructor(
     private service: ServerService,
@@ -28,4 +29,7 @@ export class SearchComponent implements OnInit {
 
       })
   }
+
+  // ตัวกรอง
+
 }

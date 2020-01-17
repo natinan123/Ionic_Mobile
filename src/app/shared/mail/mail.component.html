@@ -1,13 +1,29 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>mail</ion-title>
+    <ion-title>massage</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-row>
+    <!-- Animated Searchbar -->
+    <ion-searchbar animated></ion-searchbar>
+  </ion-row>
 
+
+
+  <ion-item *ngFor="let u of Chatuser"  [routerLink]="['/seller/seller/message' ,u.email_id]">
+    <ion-avatar slot="start">
+      <img src="data:image/jpg;base64,{{u.des_profile_pic}}">
+    </ion-avatar>
+    <ion-label>{{u.des_fname}} {{u.des_lname}}</ion-label>
+  </ion-item>
 </ion-content>
 
+
+
+
+<!-- 
 <ion-footer>
   <ion-grid>
     <ion-row>
@@ -19,4 +35,4 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-</ion-footer>
+</ion-footer> -->

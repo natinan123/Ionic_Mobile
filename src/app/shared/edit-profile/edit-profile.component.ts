@@ -1,13 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { SessionService } from 'src/app/@service/session.service';
 import { ServerService } from 'src/app/@service/server.service';
+import { FormGroup, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-favorite',
-  templateUrl: './favorite.component.html',
-  styleUrls: ['./favorite.component.scss'],
+  selector: 'app-edit-profile',
+  templateUrl: './edit-profile.component.html',
+  styleUrls: ['./edit-profile.component.scss'],
 })
-export class FavoriteComponent implements OnInit {
+export class EditProfileComponent implements OnInit {
+  public updateprofile = new FormGroup({
+    fname: new FormControl(''),
+    lname: new FormControl(''),
+    phone: new FormControl(''),
+    id_line: new FormControl(''),
+    facebook: new FormControl(''),
+    cus_detail: new FormControl('')
+  })
+  
   user: any;
   email_id: any;
   fname: any;
@@ -19,9 +30,13 @@ export class FavoriteComponent implements OnInit {
   cus_detail: any;
   profile_pic: any;
 
+
+
   constructor(
     private session: SessionService,
     private service: ServerService,
+    private route: Router,
+
   ) { }
 
   ngOnInit() {
@@ -49,4 +64,26 @@ export class FavoriteComponent implements OnInit {
     )
 
   }
+
+  
+  onUpdateprofile() {
+    const data = {
+      fname: this.fname,
+      lname: this.lname,
+      phone: this.phone,
+      id_line: this.id_line,
+      facebook: this.facebook,
+      cus_detail: this.cus_detail,
+      email_id: this.user[0].email_id
+    }
+    console.log(data)
+    this.service.putProfile(data).subscribe(
+      async (res) => {
+        this.route.navigate(['/seller/seller/favorite'])
+    
+      }
+      
+    )
+  }
+
 }

@@ -3,11 +3,12 @@ import { SessionService } from 'src/app/@service/session.service';
 import { ServerService } from 'src/app/@service/server.service';
 
 @Component({
-  selector: 'app-favorite',
-  templateUrl: './favorite.component.html',
-  styleUrls: ['./favorite.component.scss'],
+  selector: 'app-profile',
+  templateUrl: './profile.component.html',
+  styleUrls: ['./profile.component.scss'],
 })
-export class FavoriteComponent implements OnInit {
+export class ProfileComponent implements OnInit {
+
   user: any;
   email_id: any;
   fname: any;

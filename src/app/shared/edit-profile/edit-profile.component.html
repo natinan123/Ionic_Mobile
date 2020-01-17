@@ -1,0 +1,75 @@
+<ion-content [formGroup]="updateprofile">
+
+  <ion-row>
+
+
+    <ion-avatar style="width: 130px; height: auto;" class="center">
+      <img src="data:image/png;base64,{{profile_pic}}">
+    </ion-avatar>
+
+
+  </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-button fill="outline" class="center" (click)="onUpdateprofile()">บันทึกข้อมูล</ion-button>
+     
+      </ion-col>
+    
+      <ion-col>
+        <ion-button fill="outline" class="center">เลือกรูปภาพ</ion-button>
+
+      </ion-col>
+     
+    </ion-row>
+
+
+   
+    
+
+
+ 
+
+
+
+  <ion-item>
+    <ion-label>
+      <p>ชื่อ :</p>
+    </ion-label>
+    <ion-input clearInput formControlName="fname" [(ngModel)]="fname"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>
+      <p>สกุล :</p>
+    </ion-label>
+    <ion-input clearInput formControlName="lname" [(ngModel)]="lname"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>
+      <p>facebook :</p>
+    </ion-label>
+    <ion-input clearInput formControlName="facebook" [(ngModel)]="facebook"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>
+      <p>Line id :</p>
+    </ion-label>
+    <ion-input clearInput formControlName="id_line" [(ngModel)]="id_line"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>
+      <p>phone :</p>
+    </ion-label>
+    <ion-input clearInput formControlName="phone" [(ngModel)]="phone"></ion-input>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label position="stacked" style="color: #989aa2;">รายละเอียด :</ion-label>
+    <ion-textarea clearOnEdit="true" formControlName="cus_detail" [(ngModel)]="cus_detail"></ion-textarea>
+  </ion-item>
+</ion-content>

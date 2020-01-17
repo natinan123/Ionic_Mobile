@@ -6,6 +6,7 @@ import { SearchComponent } from './search/search.component';
 import { MapComponent } from './map/map.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { MailComponent } from './mail/mail.component';
+import { ProDetailComponent } from './pro-detail/pro-detail.component';
 
 
 const routes: Routes = [
@@ -35,6 +36,10 @@ const routes: Routes = [
       { // 
         path: 'favorite',
         component: FavoriteComponent
+      },
+      { // 
+        path: 'prodetail/:pro_id',
+        component: ProDetailComponent
       },
     ]
   }

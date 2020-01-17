@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgxWebstorageModule } from 'ngx-webstorage';
 import { AgmCoreModule } from '@agm/core';
 import { API } from '../map-API';
+import { ProDetailComponent } from './pro-detail/pro-detail.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { API } from '../map-API';
     WishlistComponent,
     MailComponent,
     FavoriteComponent,
+    ProDetailComponent,
   ],
   imports: [
     CommonModule,

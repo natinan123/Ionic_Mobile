@@ -24,10 +24,7 @@ const routes: Routes = [
     path: 'buyer',
     loadChildren: () => import('./buyer/buyer.module').then(m => m.BuyerModule)
   },
-  {
-    path: 'seared',
-    loadChildren: () => import('./shared/shared.module').then(m => m.SharedModule)
-  },
+
 ];
 
 @NgModule({

@@ -8,6 +8,7 @@ import { SearchComponent } from '../shared/search/search.component';
 import { WishlistComponent } from '../shared/wishlist/wishlist.component';
 import { MailComponent } from '../shared/mail/mail.component';
 import { FavoriteComponent } from '../shared/favorite/favorite.component';
+import { ProDetailComponent } from '../shared/pro-detail/pro-detail.component';
 
 
 const routes: Routes = [
@@ -43,11 +44,15 @@ const routes: Routes = [
         path: 'favorite',
         component: FavoriteComponent
       },
+      { // 
+        path: 'prodetail/:pro_id',
+        component: ProDetailComponent
+      },
     ]
   },
   {
     path: '',
-    redirectTo: 'seller/test',
+    redirectTo: 'seller',
     pathMatch: 'full'
   }
 ];

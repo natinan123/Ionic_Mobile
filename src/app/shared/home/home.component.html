@@ -1,3 +1,87 @@
-<p>
-  home works!
-</p>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+
+  <ion-list-header>
+    <ion-label>รายการแนะนำ</ion-label>
+  </ion-list-header>
+  <ion-card *ngFor="let re of recoms" [routerLink]="['/seller/seller/prodetail' ,re.pro_id]">
+    <ion-card-header>
+      <ion-thumbnail style=" height: 200px; width: auto;">
+        <img src="data:image/png;base64,{{re.image1}}">
+      </ion-thumbnail>
+      <ion-card-title class="head">{{re.pro_head}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="price">
+        <ion-label color="danger">{{re.price | number :'3.2-5'}} บาท</ion-label>
+      </div>
+      <ion-chip color="primary">
+        <ion-label>{{re.pro_sell}}</ion-label>
+      </ion-chip>
+      <ion-chip outline color="primary">
+        <ion-label>{{re.type_name}}</ion-label>
+      </ion-chip>
+      <ion-row>
+        <ion-col>
+          <ion-icon name="bed"></ion-icon>
+          <ion-label> {{re.pro_bedroom}} ห้องนอน</ion-label>
+        </ion-col>
+        <ion-col>
+          <ion-icon name="business"></ion-icon>
+          <ion-label>{{re.pro_toilet}} ห้องน้ำ</ion-label>
+        </ion-col>
+        <ion-col>
+          <ion-icon name="grid"></ion-icon>
+          <ion-label> {{re.pro_floor}} ชั้น</ion-label>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+
+  <!--! List of Text Items -->
+  <ion-list-header>
+    <ion-label>รายการยอดนิยม</ion-label>
+  </ion-list-header>
+  <ion-card *ngFor="let pop of poppular" [routerLink]="['/seller/seller/prodetail' ,pop.pro_id]">
+    <ion-card-header>
+      <ion-thumbnail style=" height: 200px; width: auto;">
+        <img src="data:image/png;base64,{{pop.image1}}">
+      </ion-thumbnail>
+      <ion-card-title class="head">{{pop.pro_head}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="price">
+        <ion-label color="danger">{{pop.price | number :'3.2-5'}} บาท</ion-label>
+      </div>
+      <ion-chip color="primary">
+        <ion-label>{{pop.pro_sell}}</ion-label>
+      </ion-chip>
+      <ion-chip outline color="primary">
+        <ion-label>{{pop.type_name}}</ion-label>
+      </ion-chip>
+      <ion-row>
+        <ion-col>
+          <ion-icon name="bed"></ion-icon>
+          <ion-label> {{pop.pro_bedroom}} ห้องนอน</ion-label>
+        </ion-col>
+        <ion-col>
+          <ion-icon name="business"></ion-icon>
+          <ion-label>{{pop.pro_toilet}} ห้องน้ำ</ion-label>
+        </ion-col>
+        <ion-col>
+          <ion-icon name="grid"></ion-icon>
+          <ion-label> {{pop.pro_floor}} ชั้น</ion-label>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+
+
+</ion-content>

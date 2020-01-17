@@ -52,13 +52,10 @@ export class LoginPage implements OnInit {
             this.route.navigate(['/buyer']);
           }
         }
-        
+
       )
+    }
+
   }
 
-}
-onLogout() {
-  this.session.clearActiveUser();
-  window.history.go(0);
-}
 }

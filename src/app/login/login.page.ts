@@ -43,13 +43,13 @@ export class LoginPage implements OnInit {
         async (res) => {
           this.session.setActiveUser(res);
           if (res[0].cus_status === "admin") {
-            this.route.navigate(['/register']);
+            this.route.navigate(['/seller']);
           }
           if (res[0].cus_status === "seller") {
-            // this.route.navigate(['/seller']);
+            this.route.navigate(['/seller']);
           }
           if (res[0].cus_status === "buyer") {
-            // this.route.navigate(['/buyer']);
+            this.route.navigate(['/buyer']);
           }
         }
         

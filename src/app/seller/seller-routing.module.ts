@@ -44,7 +44,7 @@ const routes: Routes = [
         component: MailComponent
       },
       { // 
-        path: 'message/:pro_id',
+        path: 'message/:descination',
         component: MessageComponent
       },
       { // 
@@ -63,11 +63,16 @@ const routes: Routes = [
         path: 'edit_profile',
         component: EditProfileComponent
       },
+      {
+        path: '',
+        redirectTo: 'seller/home',
+        pathMatch: 'full'
+      }
     ]
   },
   {
     path: '',
-    redirectTo: 'seller',
+    redirectTo: 'seller/home',
     pathMatch: 'full'
   }
 ];

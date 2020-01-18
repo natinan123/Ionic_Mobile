@@ -9,7 +9,7 @@ import { ServerService } from 'src/app/@service/server.service';
 export class SearchComponent implements OnInit {
   products: Object;
 
-
+  
   constructor(
     private service: ServerService,
 
@@ -30,6 +30,7 @@ export class SearchComponent implements OnInit {
       })
   }
 
-  // ตัวกรอง
+  
+
 
 }

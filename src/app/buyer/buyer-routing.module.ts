@@ -9,6 +9,10 @@ import { SearchComponent } from '../shared/search/search.component';
 import { WishlistComponent } from '../shared/wishlist/wishlist.component';
 import { MailComponent } from '../shared/mail/mail.component';
 import { FavoriteComponent } from '../shared/favorite/favorite.component';
+import { MessageComponent } from '../shared/message/message.component';
+import { ProDetailComponent } from '../shared/pro-detail/pro-detail.component';
+import { ProfileComponent } from '../shared/profile/profile.component';
+import { EditProfileComponent } from '../shared/edit-profile/edit-profile.component';
 
 
 const routes: Routes = [
@@ -20,29 +24,45 @@ const routes: Routes = [
         path: 'test',
         component: BuytestComponent
       },
-      { // หน้าหลัก
-        path: 'home1',
+      { // 
+        path: 'home',
         component: HomeComponent
       },
       { // 
-        path: 'map1',
+        path: 'map',
         component: MapComponent
       },
       { // 
-        path: 'search1',
+        path: 'search',
         component: SearchComponent
       },
       { // 
-        path: 'wishlist1',
+        path: 'wishlist',
         component: WishlistComponent
       },
       { // 
-        path: 'mail1',
+        path: 'mail',
         component: MailComponent
       },
       { // 
-        path: 'favorite1',
+        path: 'message/:descination',
+        component: MessageComponent
+      },
+      { // 
+        path: 'favorite',
         component: FavoriteComponent
+      },
+      { // 
+        path: 'prodetail/:pro_id',
+        component: ProDetailComponent
+      },
+      { // 
+        path: 'profile',
+        component: ProfileComponent
+      },
+      { // 
+        path: 'edit_profile',
+        component: EditProfileComponent
       },
     ]
   },

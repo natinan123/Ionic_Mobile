@@ -1,44 +1,45 @@
 <ion-header>
-
-  <!-- <ion-navbar>
-    <ion-title>asdasdasdasd</ion-title>
-  </ion-navbar> -->
-
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-avatar slot="start" class="center">
+      <img src="data:image/jpg;base64,{{profile_pic}}">
+    </ion-avatar>
+    <ion-title>{{fname}} {{lname}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="md-more"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
-  <div class="message-wrap">
+  <ion-row *ngFor="let row of chat">
 
-    <div>
-      <img class="user-img" alt="" src="">
-      <ion-spinner name="dots"></ion-spinner>
-      <div class="msg-detail">
-        <div class="msg-info">
-          <p>
-            asdsss&nbsp;&nbsp;&nbsp;255</p>
-        </div>
-        <div class="msg-content">
-          <span class="triangle"></span>
-          <p class="line-breaker ">asdasd</p>
-        </div>
-      </div>
-    </div>
+    <ion-chip outline color="success" *ngIf="row.source != My">
+      <ion-label>{{row.mes_text}}</ion-label>
+    </ion-chip>
+    <ion-chip *ngIf="row.source == My">
+      <ion-label>{{row.mes_text}}</ion-label>
+    </ion-chip>
+  </ion-row>
 
-  </div>
+
 
 </ion-content>
 
-<ion-footer no-border [style.height]="showEmojiPicker ? '255px' : '55px'">
-  <div class="input-wrap">
-    <button ion-button clear icon-only item-right >
-      <ion-icon name="md-happy"></ion-icon>
-    </button>
-    <textarea>
-    </textarea>
-    <button ion-button clear icon-only item-right>
-      <ion-icon name="ios-send" ios="ios-send" md="md-send"></ion-icon>
-    </button>
-  </div>
-  <!-- <emoji-picker [(ngModel)]="editorMsg"></emoji-picker> -->
+<ion-footer>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="10">
+        <ion-input type="text" [formControl]="taxtChat" placeholder="พิมพ์ข้อความ" name="message"></ion-input>
+      </ion-col>
+      <ion-col size="2">
+        <ion-icon name="paper-plane" (click)="postTaxtChat()"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-footer>

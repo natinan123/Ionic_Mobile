@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ServerService } from 'src/app/@service/server.service';
 import { SessionService } from 'src/app/@service/session.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-mail',
@@ -18,7 +19,7 @@ export class MailComponent implements OnInit {
     private session: SessionService,
     private route: ActivatedRoute,
     private router: Router,
-
+    public navCtrl: NavController,
 
   ) { }
 
@@ -26,7 +27,6 @@ export class MailComponent implements OnInit {
     this.user = this.session.getActiveUser();
     // console.log(this.user);
     this.getChatUser();
-    this.My = this.user[0].email_id;
 
   }
 
@@ -35,7 +35,7 @@ export class MailComponent implements OnInit {
     const source = this.user[0].email_id;
     this.service.getChatUser(source).subscribe(
       (res) => {
-        // console.log(res);
+        console.log(res);
         this.Chatuser = res;
       })
   }

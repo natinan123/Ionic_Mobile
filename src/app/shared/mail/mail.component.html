@@ -12,7 +12,7 @@
 
 
 
-  <ion-item *ngFor="let u of Chatuser"  [routerLink]="['/seller/seller/message' ,u.email_id]">
+  <ion-item *ngFor="let u of Chatuser" [routerLink]="['/seller/seller/message' ,u.descination]">
     <ion-avatar slot="start">
       <img src="data:image/jpg;base64,{{u.des_profile_pic}}">
     </ion-avatar>

@@ -37,7 +37,7 @@ const routes: Routes = [
         component: MailComponent
       },
       { // 
-        path: 'message/:pro_id',
+        path: 'message/:descination',
         component: MessageComponent
       },
       { // 

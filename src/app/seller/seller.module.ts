@@ -3,27 +3,21 @@ import { CommonModule } from '@angular/common';
 
 import { SellerRoutingModule } from './seller-routing.module';
 import { SellerComponent } from './seller.component';
-import { TestingComponent } from './testing/testing.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { HomeComponent } from '../shared/home/home.component';
-import { MapComponent } from '../shared/map/map.component';
-import { SearchComponent } from '../shared/search/search.component';
-import { WishlistComponent } from '../shared/wishlist/wishlist.component';
-import { MailComponent } from '../shared/mail/mail.component';
-import { FavoriteComponent } from '../shared/favorite/favorite.component';
 import { SharedModule } from '../shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxWebstorageModule } from 'ngx-webstorage';
 import { AgmCoreModule } from '@agm/core';
 import { API } from '../map-API';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { ProYouComponent } from './pro-you/pro-you.component';
 
 
 @NgModule({
   declarations: [
     SellerComponent,
-    TestingComponent,
-
+    ProYouComponent,
   ],
   imports: [
     CommonModule,
@@ -38,6 +32,8 @@ import { API } from '../map-API';
       apiKey: API.GOOGLE_API_KEY,
       libraries: ['places', 'geometry', 'drawing']
     }),//google api
+    Ng2SearchPipeModule,
+
   ]
 })
 export class SellerModule { }

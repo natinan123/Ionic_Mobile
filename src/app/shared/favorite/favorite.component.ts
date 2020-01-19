@@ -9,15 +9,7 @@ import { ServerService } from 'src/app/@service/server.service';
 })
 export class FavoriteComponent implements OnInit {
   user: any;
-  email_id: any;
-  fname: any;
-  lname: any;
-  phone: any;
-  id_line: any;
-  facebook: any;
-  pro_limit: any;
-  cus_detail: any;
-  profile_pic: any;
+ 
 
   constructor(
     private session: SessionService,
@@ -27,26 +19,7 @@ export class FavoriteComponent implements OnInit {
   ngOnInit() {
     this.user = this.session.getActiveUser();
     console.log(this.user);
-    this.getProfile();
-  }
-
-
-  getProfile() {
-    this.service.getProfile(this.user[0].email_id).subscribe(
-      (res) => {
-        console.log(res);
-        this.email_id = res[0].email_id;
-        this.fname = res[0].fname;
-        this.lname = res[0].lname;
-        this.phone = res[0].phone;
-        this.id_line = res[0].id_line;
-        this.facebook = res[0].facebook;
-        this.pro_limit = res[0].pro_limit;
-        this.cus_detail = res[0].cus_detail;
-        this.profile_pic = res[0].profile_pic;
-
-      }
-    )
 
   }
+
 }

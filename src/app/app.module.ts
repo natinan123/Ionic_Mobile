@@ -12,6 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgxWebstorageModule } from 'ngx-webstorage';
 import { AgmCoreModule } from '@agm/core';
 import { API } from './map-API';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent],
@@ -26,6 +28,9 @@ import { API } from './map-API';
       apiKey: API.GOOGLE_API_KEY,
       libraries: ['places', 'geometry', 'drawing']
     }),//google api
+    Ng2SearchPipeModule,
+    ReactiveFormsModule,
+
   ],
   providers: [
     StatusBar,

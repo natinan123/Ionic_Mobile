@@ -6,18 +6,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { BuyerComponent } from './buyer.component';
 
-import { BuytestComponent } from './buytest/buytest.component';
 import { SharedModule } from '../shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxWebstorageModule } from 'ngx-webstorage';
 import { AgmCoreModule } from '@agm/core';
 import { API } from '../map-API';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { RequireComponent } from './require/require.component';
 
 @NgModule({
   declarations: [
     BuyerComponent,
-    BuytestComponent,
-
+    RequireComponent,
   ],
   imports: [
     CommonModule,
@@ -32,6 +32,8 @@ import { API } from '../map-API';
       apiKey: API.GOOGLE_API_KEY,
       libraries: ['places', 'geometry', 'drawing']
     }),//google api
+    Ng2SearchPipeModule,
+
   ]
 })
 export class BuyerModule { }

@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>อสังหาริมทรัพย์ของคุณ</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card *ngFor="let pro of mypro | filter:searchText" [routerLink]="['/seller/seller/prodetail' ,pro.pro_id]">
+    <ion-card-header>
+      <ion-thumbnail style=" height: 200px; width: auto;">
+        <img src="data:image/png;base64,{{pro.image1}}">
+      </ion-thumbnail>
+      <ion-card-title class="head">{{pro.pro_head}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="price">
+        <ion-label color="danger">{{pro.price | number :'3.2-5'}} บาท</ion-label>
+      </div>
+      <div class="price">
+        <ion-label color="success">{{pro.pro_area | number :'3.2-5'}} ตร.ม.</ion-label>
+      </div>
+      <ion-chip color="primary">
+        <ion-label>{{pro.pro_sell}}</ion-label>
+      </ion-chip>
+      <ion-chip outline color="primary">
+        <ion-label>{{pro.type_name}}</ion-label>
+      </ion-chip>
+      <ion-row>
+        <ion-col>
+          <ion-icon name="bed"></ion-icon>
+          <ion-label> {{pro.pro_bedroom}} ห้องนอน</ion-label>
+        </ion-col>
+        <ion-col>
+          <ion-icon name="business"></ion-icon>
+          <ion-label>{{pro.pro_toilet}} ห้องน้ำ</ion-label>
+        </ion-col>
+        <ion-col>
+          <ion-icon name="grid"></ion-icon>
+          <ion-label> {{pro.pro_floor}} ชั้น</ion-label>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

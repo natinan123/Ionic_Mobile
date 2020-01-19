@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>กรอกความต้องการ</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [formGroup]="addReq">
+  <ion-grid>
+
+    <ion-item>
+      <ion-label>ประเภทอสังหาริมทรัพย์</ion-label>
+      <ion-select [(ngModel)]="Type_id" formControlName="Type_id">
+        <ion-select-option [value]="row.type_id" *ngFor="let row of types">{{row.type_name}}</ion-select-option>
+
+      </ion-select>
+    </ion-item>
+
+
+
+
+
+    <ion-item>
+      <ion-label>ภูมิภาค</ion-label>
+      <ion-select [(ngModel)]="Loc_zone" (ngModelChange)="onLocation($event)" formControlName="Loc_zone">
+        <ion-select-option [value]="z.loc_zone" *ngFor="let z of zones">{{z.zone_name}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>จังหวัด</ion-label>
+      <ion-select [(ngModel)]="Location_id" formControlName="Location_id">
+        <ion-select-option [value]="p.location_id" *ngFor="let p of provin">{{p.loc_name}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-title size="small">ราคา</ion-title>
+    <ion-item>
+      <ion-range dualKnobs="true" color="danger" debounce="200" pin="false" min="10" max="99" [(ngModel)]="rangePrice"
+        formControlName="rangePrice">
+        <ion-label slot="start">{{rangePrice.lower}}</ion-label>
+        <ion-label slot="end">{{rangePrice.upper}}</ion-label>
+      </ion-range>
+    </ion-item>
+
+
+
+    <ion-title size="small">ขนาดพื้นที่</ion-title>
+    <ion-item>
+      <ion-range dualKnobs="true" color="danger" debounce="200" pin="false" min="10" max="99" [(ngModel)]="rangeArea"
+        formControlName="rangeArea">
+        <ion-label slot="start">{{rangeArea.lower}}</ion-label>
+        <ion-label slot="end">{{rangeArea.upper}}</ion-label>
+      </ion-range>
+    </ion-item>
+
+
+    <ion-row>
+
+ 
+      <!-- Round -->
+      <ion-button shape="round" class="center" (click)="onCheck()">ยืนยันความต้องการ</ion-button>
+
+  
+    </ion-row>
+
+  </ion-grid>
+</ion-content>

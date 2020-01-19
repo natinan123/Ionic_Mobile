@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { RegisterPageRoutingModule } from './register-routing.module';
 
 import { RegisterPage } from './register.page';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   imports: [
@@ -15,6 +16,8 @@ import { RegisterPage } from './register.page';
     IonicModule,
     RegisterPageRoutingModule,
     ReactiveFormsModule,
+    Ng2SearchPipeModule,
+
   ],
   declarations: [RegisterPage]
 })

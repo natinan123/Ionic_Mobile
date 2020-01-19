@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { SellerComponent } from './seller.component';
-import { TestingComponent } from './testing/testing.component';
 import { HomeComponent } from '../shared/home/home.component';
 import { MapComponent } from '../shared/map/map.component';
 import { SearchComponent } from '../shared/search/search.component';
@@ -12,6 +11,7 @@ import { ProDetailComponent } from '../shared/pro-detail/pro-detail.component';
 import { EditProfileComponent } from '../shared/edit-profile/edit-profile.component';
 import { ProfileComponent } from '../shared/profile/profile.component';
 import { MessageComponent } from '../shared/message/message.component';
+import { ProYouComponent } from './pro-you/pro-you.component';
 
 
 const routes: Routes = [
@@ -20,10 +20,6 @@ const routes: Routes = [
     component: SellerComponent,
     children: [
       { // หน้าหลัก
-        path: 'test',
-        component: TestingComponent
-      },
-      { // 
         path: 'home',
         component: HomeComponent
       },
@@ -50,6 +46,10 @@ const routes: Routes = [
       { // 
         path: 'favorite',
         component: FavoriteComponent
+      },
+      { // 
+        path: 'pro_you',
+        component: ProYouComponent
       },
       { // 
         path: 'prodetail/:pro_id',

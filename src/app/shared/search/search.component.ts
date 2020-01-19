@@ -8,6 +8,7 @@ import { ServerService } from 'src/app/@service/server.service';
 })
 export class SearchComponent implements OnInit {
   products: Object;
+  searchText;
 
   
   constructor(

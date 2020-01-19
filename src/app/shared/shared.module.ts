@@ -18,6 +18,7 @@ import { ProDetailComponent } from './pro-detail/pro-detail.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { ProfileComponent } from './profile/profile.component';
 import { MessageComponent } from './message/message.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 @NgModule({
@@ -45,6 +46,8 @@ import { MessageComponent } from './message/message.component';
       apiKey: API.GOOGLE_API_KEY,
       libraries: ['places', 'geometry', 'drawing']
     }),//google api
+    Ng2SearchPipeModule,
+
   ]
 })
 export class SharedModule { }

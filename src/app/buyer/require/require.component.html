@@ -1,11 +1,14 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>กรอกความต้องการ</ion-title>
+
   </ion-toolbar>
 </ion-header>
 
 <ion-content [formGroup]="addReq">
   <ion-grid>
+
+    <ion-button shape="round" class="center" (click)="onCheck()">ยืนยันความต้องการ</ion-button>
 
     <ion-item>
       <ion-label>ประเภทอสังหาริมทรัพย์</ion-label>
@@ -54,14 +57,14 @@
     </ion-item>
 
 
-    <ion-row>
 
- 
+
+    
       <!-- Round -->
-      <ion-button shape="round" class="center" (click)="onCheck()">ยืนยันความต้องการ</ion-button>
+    
 
-  
-    </ion-row>
 
   </ion-grid>
+
+
 </ion-content>

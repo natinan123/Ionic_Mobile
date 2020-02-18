@@ -1,14 +1,34 @@
 <ion-menu side="start" menuId="first">
   <ion-header>
     <ion-toolbar color="primary">
-      <ion-title>Start Menu</ion-title>
+      <ion-title>เมนู</ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-content>
     <ion-list>
-      <ion-item [routerLink]="['/buyer/buyer/mail']" >รายการติดต่อ</ion-item>
-      <ion-item [routerLink]="['/buyer/buyer/favorite']">รายการชื่นชอบ</ion-item>
-      <ion-item [routerLink]="['/buyer/buyer/require']">ความต้องการ</ion-item>
+      <ion-item class="menu-list" [routerLink]="['/buyer/buyer/mail']">
+        <ion-icon name="chatbubbles" slot="start"></ion-icon> รายการติดต่อ
+      </ion-item>
+
+      <ion-item class="menu-list" [routerLink]="['/buyer/buyer/favorite']">
+        <ion-icon name="heart-half-outline" slot="start"></ion-icon> รายการชื่นชอบ
+      </ion-item>
+
+      <ion-item class="menu-list" [routerLink]="['/buyer/buyer/require']">
+        <ion-icon name="git-pull-request" slot="start"></ion-icon> ความต้องการ
+      </ion-item>
+      <ion-item class="menu-list">
+        <ion-icon name="pricetags" slot="start"></ion-icon>รายการต้องการที่ตรงกัน
+      </ion-item>
+
+      <ion-item class="menu-list" [routerLink]="['/buyer/buyer/profile']">
+        <ion-icon name="person" slot="start"></ion-icon> ข้อมูลส่วนตัว
+      </ion-item>
+
+      <ion-item class="menu-list" (click)="onLogout()">
+        <ion-icon name="power" slot="start"></ion-icon> ออกจากระบบ
+      </ion-item>
+
     </ion-list>
   </ion-content>
 </ion-menu>
@@ -20,68 +40,56 @@
 <ion-router-outlet main>
   <ion-header>
     <ion-item>
-  
+
       <img src="../../assets/imgs/Logo-24.png" width="50px">
-  
-      <ion-title size="small">ระบบจัดการอสังหาริมทรัพย์</ion-title>
-      <ion-button size="small" (click)="onLogout()">Log Out</ion-button>
+
+      <ion-title size="small" class="head">ระบบจัดการอสังหาริมทรัพย์</ion-title>
+      <!-- <ion-button size="small" (click)="onLogout()">Log Out</ion-button> -->
     </ion-item>
   </ion-header>
-  
-  
+
+
   <ion-content>
-  
+
     <ion-tabs>
-      
+
       <ion-tab-bar slot="top">
         <ion-tab-button tab="home">
           <ion-icon name="home"></ion-icon>
           <ion-label>หน้าหลัก</ion-label>
         </ion-tab-button>
-  
+
         <ion-tab-button tab="search">
           <ion-icon name="search"></ion-icon>
           <ion-label>ค้นหา</ion-label>
         </ion-tab-button>
-  
+
         <ion-tab-button tab="map">
           <ion-icon name="pin"></ion-icon>
           <ion-label>แผนที่</ion-label>
         </ion-tab-button>
-  
+
         <ion-tab-button tab="wishlist">
           <ion-icon name="notifications"></ion-icon>
           <ion-label>แจ้งเตือน</ion-label>
         </ion-tab-button>
-  
-        <ion-tab-button tab="require">
-          <ion-icon name="git-pull-request"></ion-icon>
-          <ion-label>ความต้องการ</ion-label>
-        </ion-tab-button>
-  
+
         <ion-tab-button tab="mail">
           <ion-icon name="chatbubbles"></ion-icon>
           <ion-label>แชท</ion-label>
         </ion-tab-button>
-  
-        <ion-tab-button tab="profile">
-          <ion-icon name="person"></ion-icon>
-          <ion-label>ข้อมูลส่วนตัว</ion-label>
-        </ion-tab-button>
-  
-  
-  
+
+
+
+
+
       </ion-tab-bar>
-  
+
     </ion-tabs>
-  
+
   </ion-content>
 
 
 
 
 </ion-router-outlet>
-
-
-
-

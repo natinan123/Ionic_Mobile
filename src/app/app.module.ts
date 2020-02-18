@@ -14,6 +14,7 @@ import { AgmCoreModule } from '@agm/core';
 import { API } from './map-API';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AgmJsMarkerClustererModule } from '@agm/js-marker-clusterer';
 
 @NgModule({
   declarations: [AppComponent],
@@ -30,6 +31,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     }),//google api
     Ng2SearchPipeModule,
     ReactiveFormsModule,
+    AgmJsMarkerClustererModule,
 
   ],
   providers: [

@@ -10,20 +10,21 @@ import { MenuController } from '@ionic/angular';
   styleUrls: ['./buyer.component.scss'],
 })
 export class BuyerComponent implements OnInit {
+  user: any;
 
   openFirst() {
     this.menu.enable(true, 'first');
     this.menu.open('first');
   }
 
-  openEnd() {
-    this.menu.open('end');
-  }
+  // openEnd() {
+  //   this.menu.open('end');
+  // }
 
-  openCustom() {
-    this.menu.enable(true, 'custom');
-    this.menu.open('custom');
-  }
+  // openCustom() {
+  //   this.menu.enable(true, 'custom');
+  //   this.menu.open('custom');
+  // }
 
   constructor(
     private menu: MenuController,
@@ -33,7 +34,8 @@ export class BuyerComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-   
+    this.user = this.session.getActiveUser();
+    console.log(this.user);
   }
 
   onLogout() {

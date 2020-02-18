@@ -20,6 +20,9 @@ export class MapComponent implements OnInit {
   markers: Object;
   lat2: number;
   lng2: number;
+  user: any;
+  status: any;
+  link: string;
   // type_id: any;
 
 
@@ -38,7 +41,20 @@ export class MapComponent implements OnInit {
     this.getUserLocation();
     // console.log(this.type_id);
     // this.onGetHouse();
-
+    this.user = this.session.getActiveUser();
+    this.status = this.user[0].cus_status;
+    if (this.user[0].cus_status == null || this.user[0].cus_status == "") {
+      this.link = '/mainpage/mainpage/prodetail';
+    }
+    if (this.user[0].cus_status == "admin") {
+      this.link = '/admin/admin/prodetail';
+    }
+    if (this.user[0].cus_status == "seller") {
+      this.link = '/seller/seller/prodetail';
+    } 
+    if (this.user[0].cus_status == "buyer") {
+      this.link = '/buyer/buyer/prodetail';
+    }
   }
 
   // ที่อยู่ผู้ใช้

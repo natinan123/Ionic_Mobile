@@ -13,6 +13,8 @@ export class MailComponent implements OnInit {
   user: any;
   My: any;
   Chatuser: Object;
+  status: any;
+  link: string;
 
   constructor(
     private service: ServerService,
@@ -24,10 +26,23 @@ export class MailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.user = this.session.getActiveUser();
+   
     // console.log(this.user);
     this.getChatUser();
-
+    this.user = this.session.getActiveUser();
+    this.status = this.user[0].cus_status;
+    if (this.user[0].cus_status == null || this.user[0].cus_status == "") {
+      this.link = '/mainpage/mainpage/message';
+    }
+    if (this.user[0].cus_status == "admin") {
+      this.link = '/admin/admin/message';
+    }
+    if (this.user[0].cus_status == "seller") {
+      this.link = '/seller/seller/message';
+    } 
+    if (this.user[0].cus_status == "buyer") {
+      this.link = '/buyer/buyer/message';
+    }
   }
 
   // ดูผู้ติดต่อ

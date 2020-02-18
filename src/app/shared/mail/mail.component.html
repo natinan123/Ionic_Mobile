@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar style="padding-top: 0px;">
     <ion-title>massage</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -12,7 +12,7 @@
 
 
 
-  <ion-item *ngFor="let u of Chatuser" [routerLink]="['/seller/seller/message' ,u.descination]">
+  <ion-item *ngFor="let u of Chatuser" [routerLink]="[link ,u.descination]">
     <ion-avatar slot="start">
       <img src="data:image/jpg;base64,{{u.des_profile_pic}}">
     </ion-avatar>

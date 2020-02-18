@@ -19,6 +19,7 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { ProfileComponent } from './profile/profile.component';
 import { MessageComponent } from './message/message.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { AgmJsMarkerClustererModule } from '@agm/js-marker-clusterer';
 
 
 @NgModule({
@@ -47,6 +48,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
       libraries: ['places', 'geometry', 'drawing']
     }),//google api
     Ng2SearchPipeModule,
+    AgmJsMarkerClustererModule,
 
   ]
 })

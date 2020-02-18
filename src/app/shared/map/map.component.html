@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar  style="padding-top: 0px;">
     <ion-title>map</ion-title>
   </ion-toolbar>
   <ion-toolbar>
@@ -19,16 +19,31 @@
 
 <ion-content>
   <agm-map [style.height.px]="height" [latitude]="lat2" [longitude]="lng2">
-    <agm-marker *ngFor="let m of markers;" [latitude]="m.latitude" [longitude]="m.longtitude">
+    <agm-marker-cluster
+      imagePath="https://raw.githubusercontent.com/googlemaps/v3-utility-library/master/markerclustererplus/images/m">
+      <!-- หน้าเริ่ม -->
+      <agm-marker *ngFor="let m of markers;" [latitude]="m.latitude" [longitude]="m.longtitude">
+        <!-- มาค์ก -->
 
-      <agm-info-window>
-        <h5><strong>{{m.type_name}} </strong></h5>
+        <agm-info-window style="width: 223px; height: auto;">
+          <h5><strong>{{m.type_name}} </strong></h5>
+          <p>{{m.pro_head}}</p>
+          <div class="row">
+            <div class="col-md-5">
+              <p>ราคา : {{m.price | number : '1.2-2'}} บาท</p>
+              <p>ขนาดพื้นที่ :{{m.pro_area | number : '1.2-2'}} ตร.ม.</p>
+              <button class="btn btn-primary btn-sm" [routerLink]="[link ,m.pro_id]">ดูรายละเอียด</button>
+            </div>
+            
+          </div>
 
-        <p class="head">{{m.pro_head}}</p>
-        <p>{{m.price | number :'3.2-5'}} บาท</p>
-        <ion-button size="small" [routerLink]="['/seller/seller/prodetail' ,m.pro_id]">รายละเอียด</ion-button>
-      </agm-info-window>
 
-    </agm-marker>
+
+
+
+        </agm-info-window>
+
+      </agm-marker>
+    </agm-marker-cluster>
   </agm-map>
 </ion-content>

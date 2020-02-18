@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar style="padding-top: 0px;">
     <ion-title>home</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -11,7 +11,7 @@
   <ion-list-header>
     <ion-label>รายการแนะนำ</ion-label>
   </ion-list-header>
-  <ion-card *ngFor="let re of recoms" [routerLink]="['/seller/seller/prodetail' ,re.pro_id]">
+  <ion-card *ngFor="let re of recoms" [routerLink]="[link ,re.pro_id]">
     <ion-card-header>
       <ion-thumbnail style=" height: 200px; width: auto;">
         <img src="data:image/png;base64,{{re.image1}}">
@@ -20,10 +20,10 @@
     </ion-card-header>
     <ion-card-content>
       <div class="price">
-        <ion-label color="danger">{{re.price | number :'3.2-5'}} บาท</ion-label>
+        <ion-label color="danger">{{re.price | number :'1.2-5'}} บาท</ion-label>
       </div>
       <div class="price">
-        <ion-label color="success">{{re.pro_area | number :'3.2-5'}} ตร.ม.</ion-label>
+        <ion-label color="success">{{re.pro_area | number :'1.2-5'}} ตร.ม.</ion-label>
       </div>
       <ion-chip color="primary">
         <ion-label>{{re.pro_sell}}</ion-label>
@@ -52,7 +52,7 @@
   <ion-list-header>
     <ion-label>รายการยอดนิยม</ion-label>
   </ion-list-header>
-  <ion-card *ngFor="let pop of poppular" [routerLink]="['/seller/seller/prodetail' ,pop.pro_id]">
+  <ion-card *ngFor="let pop of poppular" [routerLink]="[link ,pop.pro_id]">
     <ion-card-header>
       <ion-thumbnail style=" height: 200px; width: auto;">
         <img src="data:image/png;base64,{{pop.image1}}">
@@ -61,10 +61,10 @@
     </ion-card-header>
     <ion-card-content>
       <div class="price">
-        <ion-label color="danger">{{pop.price | number :'3.2-5'}} บาท</ion-label>
+        <ion-label color="danger">{{pop.price | number :'1.2-5'}} บาท</ion-label>
       </div>
       <div class="price">
-        <ion-label color="success">{{pop.pro_area | number :'3.2-5'}} ตร.ม.</ion-label>
+        <ion-label color="success">{{pop.pro_area | number :'1.2-5'}} ตร.ม.</ion-label>
       </div>
       <ion-chip color="primary">
         <ion-label>{{pop.pro_sell}}</ion-label>

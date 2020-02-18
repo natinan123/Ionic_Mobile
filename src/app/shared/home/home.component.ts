@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServerService } from 'src/app/@service/server.service';
+import { SessionService } from 'src/app/@service/session.service';
 
 @Component({
   selector: 'app-home',
@@ -10,10 +11,15 @@ export class HomeComponent implements OnInit {
   products: Object;
   poppular: Object;
   recoms: Object;
+  user: any;
+  status: any;
+  link: string;
 
 
   constructor(
     private service: ServerService,
+    private session: SessionService,
+
   ) { }
 
   ngOnInit() {
@@ -21,6 +27,20 @@ export class HomeComponent implements OnInit {
     this.getProperty();
     this.getPoppular();
     this.getRecom();
+    this.user = this.session.getActiveUser();
+    this.status = this.user[0].cus_status;
+    if (this.user[0].cus_status == null || this.user[0].cus_status == "") {
+      this.link = '/mainpage/mainpage/message';
+    }
+    if (this.user[0].cus_status == "admin") {
+      this.link = '/admin/admin/message';
+    }
+    if (this.user[0].cus_status == "seller") {
+      this.link = '/seller/seller/message';
+    } 
+    if (this.user[0].cus_status == "buyer") {
+      this.link = '/buyer/buyer/message';
+    }
   }
 
 

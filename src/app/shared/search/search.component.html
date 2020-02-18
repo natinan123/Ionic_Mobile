@@ -10,7 +10,7 @@
     <ion-list-header>
       <ion-label>อสังหาริมทรัพย์</ion-label>
     </ion-list-header>
-    <ion-card *ngFor="let pro of products | filter:searchText" [routerLink]="['/seller/seller/prodetail' ,pro.pro_id]">
+    <ion-card *ngFor="let pro of products | filter:searchText" [routerLink]="[link ,pro.pro_id]">
       <ion-card-header>
         <ion-thumbnail style=" height: 200px; width: auto;">
           <img src="data:image/png;base64,{{pro.image1}}">
@@ -19,10 +19,10 @@
       </ion-card-header>
       <ion-card-content>
         <div class="price">
-          <ion-label color="danger">{{pro.price | number :'3.2-5'}} บาท</ion-label>
+          <ion-label color="danger">{{pro.price | number :'1.2-5'}} บาท</ion-label>
         </div>
         <div class="price">
-          <ion-label color="success">{{pro.pro_area | number :'3.2-5'}} ตร.ม.</ion-label>
+          <ion-label color="success">{{pro.pro_area | number :'1.2-5'}} ตร.ม.</ion-label>
         </div>
         <ion-chip color="primary">
           <ion-label>{{pro.pro_sell}}</ion-label>

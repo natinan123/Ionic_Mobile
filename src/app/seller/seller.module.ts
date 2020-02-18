@@ -12,6 +12,7 @@ import { AgmCoreModule } from '@agm/core';
 import { API } from '../map-API';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { ProYouComponent } from './pro-you/pro-you.component';
+import { AgmJsMarkerClustererModule } from '@agm/js-marker-clusterer';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { ProYouComponent } from './pro-you/pro-you.component';
       libraries: ['places', 'geometry', 'drawing']
     }),//google api
     Ng2SearchPipeModule,
+    AgmJsMarkerClustererModule,
 
   ]
 })
